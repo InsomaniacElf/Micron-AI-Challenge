@@ -7,8 +7,48 @@ dependencies = [
     "matplotlib>=3.10.3",
     "pandas>=2.2.3",
     "pillow>=11.2.1",
+    "plotly>=6.1.2",
     "pyarrow>=20.0.0",
     "ruff>=0.11.12",
     "scikit-learn>=1.6.1",
     "seaborn>=0.13.2",
+]
+
+[tool.ruff]
+line-length = 88
+select = [
+    "ALL", # include all the rules, including new ones
+]
+ignore = [
+    #### modules
+    "ANN", # flake8-annotations
+    "COM", # flake8-commas
+    "C90", # mccabe complexity
+    "DJ",  # django
+    "EXE", # flake8-executable
+    "T10", # debugger
+    "TID", # flake8-tidy-imports
+
+    #### specific rules
+    "D100",   # ignore missing docs
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",
+    "D205",
+    "D212",
+    "D400",
+    "D401",
+    "D415",
+    "E402",   # false positives for local imports
+    "E501",   # line too long
+    "TRY003", # external messages in exceptions are too verbose
+    "TD002",
+    "TD003",
+    "FIX002", # too verbose descriptions of todos
+    "ERA001",
 ]
